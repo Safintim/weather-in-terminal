@@ -21,7 +21,6 @@ def get_weather(office=None):
             url = URL_TEMPLATE.format(office)
             req = requests.get(url, params=PARAMS)
             print(req.text)
-            print(req.url)
 
 
 if __name__ == '__main__':

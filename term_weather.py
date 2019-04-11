@@ -4,6 +4,9 @@ OFFICES = ['Kazan', 'Moscow', 'Samara']
 URL_TEMPLATE = 'http://wttr.in/{}'
 PARAMS = {
     'lang': 'ru',
+    'n': '',
+    'T': '',
+    'q': '',
     'm': ''
 }
 
@@ -18,6 +21,7 @@ def get_weather(office=None):
             url = URL_TEMPLATE.format(office)
             req = requests.get(url, params=PARAMS)
             print(req.text)
+            print(req.url)
 
 
 if __name__ == '__main__':

@@ -2,33 +2,34 @@ import requests
 import argparse
 
 
-OFFICES = ['Kazan', 'Moscow', 'Samara']
-URL_TEMPLATE = 'http://wttr.in/{}'
-PARAMS = {
-    'lang': 'ru',
-    'n': '',
-    'T': '',
-    'q': '',
-    'm': ''
-}
-
-
-def get_weather():
-    for office in OFFICES:
-        url = URL_TEMPLATE.format(office)
-        req = requests.get(url, params=PARAMS)
+def get_weather(url_template, params, offices):
+    for office in offices:
+        url = url_template.format(office)
+        req = requests.get(url, params=params)
         print(req.text)
 
 
 def create_parser():
     parser = argparse.ArgumentParser()
-    parser.add_argument('-c', '--city', nargs='+', default=['Kazan'])
+    parser.add_argument('city', nargs='+')
     return parser
 
 
-if __name__ == '__main__':
+def main():
+    url_template = 'http://wttr.in/{}'
+    params = {
+        'lang': 'ru',
+        'n': '',
+        'T': '',
+        'q': '',
+        'm': ''
+    }
+
     parser = create_parser()
     namespace = parser.parse_args()
-    OFFICES = namespace.city
-    get_weather()
+    offices = namespace.city
+    get_weather(url_template, params, offices)
 
+
+if __name__ == '__main__':
+    main()

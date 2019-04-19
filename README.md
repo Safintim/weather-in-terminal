@@ -31,10 +31,9 @@ pip3 install -r requirements.txt
 ## Как использовать: 
 ***
 ```sh
-python3 term_weather.py
-python3 term_weather.py -c Moscow
-python3 term_weather.py -c Moscow Samara Kazan
+python3 term_weather.py Moscow
+python3 term_weather.py Moscow Samara Kazan
 ```
 
 Пример:
-![Alt Text]()
+![Alt Text](http://ipic.su/img/img7/fs/weather.1555669725.gif)

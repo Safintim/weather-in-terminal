@@ -3,9 +3,38 @@
 
 Использует сервис http://wttr.in/
 
+## Требования
 
-Как использовать: 
+Для запуска программы требуется:
 
-python3 term_weather.py  # по умолчанию город Казань
+1. Python 3.6
+2. Terminal
 
-python3 term_weather.py -c Moscow # Moscow Samara Kazan
+## Как установить:
+
+1. Установить Python3:
+
+(Windows):[python.org/downloads](https://www.python.org/downloads/windows/)
+
+(Debian):
+```sh
+sudo apt-get install python3
+sudo apt-get install python3-pip
+```
+2. Установить зависимости и скачать сам проект:
+
+```sh
+git clone https://github.com/Safintim/weather-in-terminal.git
+pip3 install -r requirements.txt
+```
+
+## Как использовать: 
+***
+```sh
+python3 term_weather.py
+python3 term_weather.py -c Moscow
+python3 term_weather.py -c Moscow Samara Kazan
+```
+
+Пример:
+![Alt Text]()
